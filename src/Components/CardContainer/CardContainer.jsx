@@ -1,16 +1,9 @@
 import React from 'react';
+import CardViewer from '../CardViewer/CardViewer';
 
 const CardContainer = ({cards}) => {
 
-    const cardChoices = cards.map((card) => {
-        return(
-            <div>
-                <div>{card.id}</div>
-                <div>{card.word}</div>
-                <div>{card.definition}</div>
-            </div>
-        )
-    })
+    const cardChoices = cards.map((card) => <CardViewer card={card}/>)
 
     return ( 
         <div>{cardChoices}</div>
