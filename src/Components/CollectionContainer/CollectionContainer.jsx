@@ -1,14 +1,9 @@
-
+import Collection from "../Collection/Collection";
 
 
 const CollectionContainer = ({collections, getCardsInCollection}) => {
     
-    const collectionOptions = collections.map((collection) => {
-        return <button onClick={handleClick}>{collection.title}</button>
-        function handleClick(){
-            getCardsInCollection(collection)
-        }
-    });
+    const collectionOptions = collections.map((collection) => <Collection collection={collection} getCardsInCollection={getCardsInCollection} />);
     
     return ( 
         <section id='collection-container' >
