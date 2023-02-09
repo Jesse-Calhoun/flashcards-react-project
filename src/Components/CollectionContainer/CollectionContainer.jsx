@@ -7,8 +7,8 @@ const CollectionContainer = ({collections, getCardsInCollection}) => {
     
     return ( 
         <section id='collection-container' >
-            <h3>Collections</h3>
-            <ul>
+            <em><div>Collections</div></em>
+            <ul id='collection-options'>
                 {collectionOptions}
             </ul>
         </section>

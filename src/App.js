@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './Components/Header/Header';
 import SideBar from './Components/Sidebar/Sidebar';
+import CardContainer from './Components/CardContainer/CardContainer';
 
 
 
@@ -35,6 +36,7 @@ function App() {
     <div>
       <Header/>
       <SideBar collections={collections} getCardsInCollection={getCardsInCollection} />
+      <CardContainer cards={cards}/>
     </div>
   );
 }

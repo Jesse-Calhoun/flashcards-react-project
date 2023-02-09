@@ -5,7 +5,9 @@ const Collection = ({collection, getCardsInCollection}) => {
         getCardsInCollection(collection)
     }
     return ( 
-        <button onClick={handleClick}>{collection.title}</button>
+        <section id='collection-button' >
+            <button onClick={handleClick}>{collection.title}</button>
+        </section>
      );
 }
  
