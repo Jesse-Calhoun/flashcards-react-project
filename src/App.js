@@ -13,14 +13,18 @@ function App() {
     getAllCollections();
   }, [])
 
+  useEffect(() => {
+    getCardsInCollection();
+  }, [cards])
+
   async function getAllCollections(){
     let response = await axios.get("http://127.0.0.1:8000/api/collections/");
     setCollections(response.data);
   }
 
   
-  async function getCardsInCollection(collectionId) {
-    let url = "http://127.0.0.1:8000/api/collections/" + collectionId + "/cards/";
+  async function getCardsInCollection(collection) {
+    let url = "http://127.0.0.1:8000/api/collections/" + collection.id + "/cards/";
     let response = await axios.get(url);
     setCards(response.data)
   }
