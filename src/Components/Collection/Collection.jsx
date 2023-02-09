@@ -1,9 +1,9 @@
 
 
-const Collection = ({collection, getCardsInCollection}) => {
+const Collection = ({collection}) => {
 
     function handleSubmit(){
-        getCardsInCollection(collection.id)
+        
     }
 
     return ( 
