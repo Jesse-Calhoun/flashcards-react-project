@@ -23,7 +23,7 @@ const CardViewer = ({cards}) => {
             setIndex(index - 1);
         }
         else {
-            setIndex(2);
+            setIndex(cards.length-1);
         }
     }
 
