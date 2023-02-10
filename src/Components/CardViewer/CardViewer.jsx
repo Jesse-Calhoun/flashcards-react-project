@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Card from '../Card/Card';
 
 const CardViewer = ({cards}) => {
     const [index, setIndex] = useState(0)
@@ -23,15 +24,14 @@ const CardViewer = ({cards}) => {
             setIndex(index - 1);
         }
         else {
-            setIndex(cards.length-1);
+            setIndex(cards.length - 1);
         }
     }
 
     return (
         <section id="card-viewer">
             <div>
-                <div>{cards[index].word}</div>
-                <div>{cards[index].definition}</div>
+                <Card card={cards[index]}/>
             </div>
             <div>
             <div>{selectedCards[index].id}/{selectedCards.length}</div>
