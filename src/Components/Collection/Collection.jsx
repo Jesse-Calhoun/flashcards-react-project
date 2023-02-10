@@ -2,7 +2,7 @@
 
 const Collection = ({collection, getCardsInCollection}) => {
     function handleClick(){
-        getCardsInCollection(collection)
+        getCardsInCollection(collection.id)
     }
     return ( 
         <section id='collection-button' >

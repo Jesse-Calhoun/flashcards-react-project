@@ -1,8 +1,15 @@
+import React, { useState } from 'react';
+
 const Card = ({card}) => {
+
+    const [isFlipped,setIsFlipped] = useState(false)
+
+    function handleFlip(){
+        setIsFlipped(!isFlipped)
+    }
     return (
-        <div>
-            <div>{card.word}</div>
-            <div>{card.definition}</div>
+        <div onClick={handleFlip}>
+            {isFlipped ? card.definition : card.word}
         </div>
     );
 }

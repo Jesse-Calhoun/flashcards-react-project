@@ -14,11 +14,9 @@ function App() {
 
   useEffect(() => {
     getAllCollections();
+    getCardsInCollection(1)
   }, [])
 
-  // useEffect(() => {
-  //   getCardsInCollection();
-  // }, [])
 
 
   async function getAllCollections(){
@@ -26,8 +24,8 @@ function App() {
     setCollections(response.data);
   }
 
-  async function getCardsInCollection(collection) {
-    let url = "http://127.0.0.1:8000/api/collections/" + collection.id + "/cards/";
+  async function getCardsInCollection(collectionId) {
+    let url = "http://127.0.0.1:8000/api/collections/" + collectionId + "/cards/";
     const response = await axios.get(url);
     setCards(response.data)
     console.log(cards)
