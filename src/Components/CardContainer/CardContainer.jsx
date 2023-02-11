@@ -1,10 +1,10 @@
 import React from 'react';
 import CardViewer from '../CardViewer/CardViewer';
 
-const CardContainer = ({cards}) => {
+const CardContainer = ({cards, chosenCollection, getAllCollections}) => {
 
     return ( 
-        <CardViewer cards={cards}/>
+        <CardViewer cards={cards} chosenCollection={chosenCollection} getAllCollections={getAllCollections} />
      );
 }
  

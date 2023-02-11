@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import AddNewFlashcard from '../AddNewFlashcard/AddNewFlashcard';
 import Card from '../Card/Card';
 
-const CardViewer = ({cards}) => {
+const CardViewer = ({cards, chosenCollection, getAllCollections}) => {
     const [index, setIndex] = useState(0)
     let selectedCards = cards
 
@@ -30,11 +31,12 @@ const CardViewer = ({cards}) => {
 
     return (
         <section id="card-viewer">
+            <AddNewFlashcard chosenCollection={chosenCollection} getAllCollections={getAllCollections}/>
             <div>
                 <Card card={cards[index]}/>
             </div>
             <div>
-            <div>{selectedCards[index].id}/{selectedCards.length}</div>
+            <div>{index+1}/{selectedCards.length}</div>
                 <button onClick={handlePrevious}>Previous</button>
                 <button onClick={handleNext}>Next</button>
             </div>

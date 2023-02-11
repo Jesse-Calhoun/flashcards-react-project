@@ -9,6 +9,7 @@ const Card = ({card}) => {
     }
     return (
         <div onClick={handleFlip}>
+            {/* condition ? exprIfTrue : exprIfFalse <-----ternary statement, could switch word and definition as long as line 5 false is changed to true*/}
             {isFlipped ? card.definition : card.word}
         </div>
     );
