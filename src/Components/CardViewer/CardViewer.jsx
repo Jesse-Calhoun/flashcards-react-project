@@ -31,7 +31,7 @@ const CardViewer = ({cards, getCardsInCollection, collectionId, setCards}) => {
     }
 
     async function deleteFlashcard(currentCollection, cardId){
-        let response = axios.delete(`http://127.0.0.1:8000/api/collections/${currentCollection}/cards/${cardId}/`)
+        let response = await axios.delete(`http://127.0.0.1:8000/api/collections/${currentCollection}/cards/${cardId}/`)
         if (response.status === 204){
             await getCardsInCollection(currentCollection)
         }
@@ -40,7 +40,6 @@ const CardViewer = ({cards, getCardsInCollection, collectionId, setCards}) => {
     function handleDelete(event){
         event.preventDefault();
         deleteFlashcard(collectionId, cards[index].id);
-        delete cards[index] 
         setIndex(0)
         let adjustedcards = cards.filter(function( element ) {
             return element !== undefined;
@@ -50,7 +49,9 @@ const CardViewer = ({cards, getCardsInCollection, collectionId, setCards}) => {
 
     return (
         <section id="card-viewer">
-            <AddNewFlashcard getCardsInCollection={getCardsInCollection} collectionId={collectionId} />
+            <div >
+                <AddNewFlashcard getCardsInCollection={getCardsInCollection} collectionId={collectionId} />
+            </div>
             <div>
                 <Card card={cards[index]}/>
                 <div>

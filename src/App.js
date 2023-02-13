@@ -39,8 +39,12 @@ function App() {
     <div>
       <Header/>
       {/* <Main collections={collections}/> */}
-      <SideBar collections={collections} getCardsInCollection={getCardsInCollection}/>
-      <CardContainer cards={cards}  getCardsInCollection={getCardsInCollection}  collectionId={collectionId} setCards={setCards}/>
+      <div className='col-xs-3'>
+        <SideBar collections={collections} getCardsInCollection={getCardsInCollection}/>
+      </div>
+      <div className='col-xs-9'>
+        <CardContainer cards={cards}  getCardsInCollection={getCardsInCollection}  collectionId={collectionId} setCards={setCards}/>
+      </div>
     </div>
   );
 }
