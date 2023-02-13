@@ -1,9 +1,9 @@
 import Collection from "../Collection/Collection";
 
 
-const CollectionContainer = ({collections, getCardsInCollection, chosenCollection, setChosenCollection}) => {
+const CollectionContainer = ({collections, getCardsInCollection }) => {
     
-    const collectionOptions = collections.map((collection) => <Collection collection={collection} getCardsInCollection={getCardsInCollection} chosenCollection={chosenCollection} setChosenCollection={setChosenCollection} />);
+    const collectionOptions = collections.map((collection) => <Collection collection={collection} getCardsInCollection={getCardsInCollection}/>);
     
     return ( 
         <section id='collection-container' >

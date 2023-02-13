@@ -10,12 +10,12 @@ import CardContainer from './Components/CardContainer/CardContainer';
 function App() {
 
   const [collections,setCollections] = useState([])
-  const [cards, setCards] = useState([{word: 'Select a collection', definition: 'Select a collection.'}])
-  const [chosenCollection, setChosenCollection] = useState({})
+  const [cards, setCards] = useState([{word: 'Welcome to Flashcards please select a collection.', definition: 'Select a collection.'}])
+  const [collectionId, setCollectionId] = useState(0)
 
   useEffect(() => {
     getAllCollections();
-    getCardsInCollection(chosenCollection.id)
+    getCardsInCollection(1);
   }, [])
   
 
@@ -26,10 +26,11 @@ function App() {
     setCollections(response.data);
   }
 
-  async function getCardsInCollection(chosenCollection) {
-    let url = "http://127.0.0.1:8000/api/collections/" + chosenCollection.id + "/cards/";
+  async function getCardsInCollection(collectionId) {
+    let url = "http://127.0.0.1:8000/api/collections/" + collectionId + "/cards/";
     let response = await axios.get(url);
     setCards(response.data)
+    setCollectionId(collectionId)
     console.log(cards)
   }
   
@@ -38,8 +39,8 @@ function App() {
     <div>
       <Header/>
       {/* <Main collections={collections}/> */}
-      <SideBar collections={collections} getCardsInCollection={getCardsInCollection} chosenCollection={chosenCollection} setChosenCollection={setChosenCollection} />
-      <CardContainer cards={cards} chosenCollection={chosenCollection} getAllCollections={getAllCollections} />
+      <SideBar collections={collections} getCardsInCollection={getCardsInCollection}/>
+      <CardContainer cards={cards}  getCardsInCollection={getCardsInCollection}  collectionId={collectionId} />
     </div>
   );
 }

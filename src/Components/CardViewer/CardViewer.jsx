@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import AddNewFlashcard from '../AddNewFlashcard/AddNewFlashcard';
 import Card from '../Card/Card';
 
-const CardViewer = ({cards, chosenCollection, getAllCollections}) => {
+const CardViewer = ({cards, getCardsInCollection, collectionId}) => {
     const [index, setIndex] = useState(0)
-    let selectedCards = cards
+    
 
 
     function handleNext(){
@@ -31,12 +31,12 @@ const CardViewer = ({cards, chosenCollection, getAllCollections}) => {
 
     return (
         <section id="card-viewer">
-            <AddNewFlashcard chosenCollection={chosenCollection} getAllCollections={getAllCollections}/>
+            <AddNewFlashcard getCardsInCollection={getCardsInCollection} collectionId={collectionId} />
             <div>
                 <Card card={cards[index]}/>
             </div>
             <div>
-            <div>{index+1}/{selectedCards.length}</div>
+            <div>{index+1}/{cards.length}</div>
                 <button onClick={handlePrevious}>Previous</button>
                 <button onClick={handleNext}>Next</button>
             </div>

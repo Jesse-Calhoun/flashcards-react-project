@@ -2,15 +2,19 @@ import axios from 'axios';
 import React, { useState } from 'react';
 
 
-const AddNewFlashcard = ({chosenCollection, getAllCollections}) => {
+const AddNewFlashcard = ({getCardsInCollection, collectionId}) => {
     const [word, setWord] = useState('')
     const [definition, setDefinition] = useState('')
 
-    let activeCollection = chosenCollection
 
-    async function addNewFlashcard(newFlashcard, activeCollection){
-        let url = "http://127.0.0.1:8000/api/collections/" + activeCollection.id + "/cards/";
+    async function addNewFlashcard(newFlashcard){
+        let url = "http://127.0.0.1:8000/api/collections/" + collectionId + "/cards/";
         let response = await axios.post(url, newFlashcard)
+        // setCards(response.data)
+        if (response.status === 201 ){
+            await getCardsInCollection(collectionId)
+            // await setCards(response.data)
+        }
     }
 
     function handleSubmit(event){

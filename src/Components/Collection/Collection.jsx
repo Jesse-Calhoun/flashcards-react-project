@@ -1,9 +1,8 @@
 
 
-const Collection = ({collection, getCardsInCollection, chosenCollection, setChosenCollection}) => {
+const Collection = ({collection, getCardsInCollection}) => {
     function handleClick(){
-        setChosenCollection(collection)
-        getCardsInCollection(chosenCollection)
+        getCardsInCollection(collection.id)
     }
     return ( 
         <section id='collection-button' >
