@@ -52,19 +52,21 @@ const CardViewer = ({cards, getCardsInCollection, collectionId, setCards}) => {
         <section id="card-viewer">
             <div className='col-xs-9 padding center-align border-only original-background-color' >
                 <div className='card-viewer'>
+                    <div className='move-right'>
+                        <button onClick={handleDelete} className='button'>Delete</button>
+                    </div>
                     <div >
                         <Card card={cards[index]} />
                     </div>
-                    <div >
-                        <button onClick={handleDelete}>Delete</button>
-                    </div>
                 </div>
                 <div className='under-card-area'>
-                    <div>Flashcard {index+1} of {cards.length}</div>
-                    <div >
-                        <button onClick={handlePrevious}>Previous</button>
-                        <button onClick={handleNext}>Next</button>
-                    </div>
+                        <div className='col-sm-4'>
+                            <button onClick={handlePrevious}>Previous</button>
+                        </div>
+                        <div className='col-sm-4'>Flashcard {index+1} of {cards.length}</div>
+                        <div className='col-sm-4'>
+                            <button onClick={handleNext}>Next</button>
+                        </div>
                 </div>
             </div>
             <div className='align-items-end '>

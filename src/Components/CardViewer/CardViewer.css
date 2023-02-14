@@ -4,7 +4,7 @@
 .card-viewer{
     background-color: palevioletred;
     border: 1px solid black;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .padding{
@@ -16,9 +16,6 @@
     text-align: center;
 }
 
-.space-around{
-    align-content: space-around;
-}
 
 .border-only{
     border: 1px solid black;
@@ -29,4 +26,20 @@
 .under-card-area{
     background-color: bisque;
     border-top: 1px solid black;
+}
+
+.button{
+    background-color: bisque;
+    color: red;
+    border-radius: 15px;
+}
+
+.move-right{
+    float: right;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+.space-around{
+    justify-content: flex-end;
 }
