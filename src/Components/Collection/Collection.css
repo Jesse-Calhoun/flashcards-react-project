@@ -1,3 +1,14 @@
 .align-left{
     align-content: left;    
 }
+
+.collection-button{
+    background-color: #5B84B1FF;
+    color: bisque;
+}
+
+.collection-button:hover{
+    background-color: #5F4B8BFF;
+    color: bisque;
+    transition: 0.5s;
+}

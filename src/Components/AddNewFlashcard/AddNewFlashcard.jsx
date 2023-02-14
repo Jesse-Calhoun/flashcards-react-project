@@ -41,7 +41,7 @@ const AddNewFlashcard = ({getCardsInCollection, collectionId}) => {
                     <input type="text" placeholder='New Definition' onChange={(event) => setDefinition(event.target.value)} value={definition} />
                 </div>
             </div>
-            <button type='submit' className='button'>Submit</button>
+            <button type='submit' className='add-button'>Submit</button>
         </form>
      );
 }

@@ -1,9 +1,17 @@
 .add-new-card-box{
     border: 1px solid black;
     background-color:bisque;
+    border-radius: 10px;
 }
 
-.button{
+.add-button{
     background-color: green;
-    color: azure;
+    color: bisque;
+    border-radius: 15px;
+}
+
+.add-button:hover{
+    background-color: greenyellow;
+    color: green;
+    transition: 0.5s;
 }

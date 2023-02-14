@@ -7,6 +7,7 @@
     border-radius: 15px;
 }
 
+
 .padding{
     margin-left: auto;
     margin-right: auto;
@@ -19,8 +20,10 @@
 
 .border-only{
     border: 1px solid black;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 0px;
+    margin-right: 60px;
+    margin-left: 20px;
 }
 
 .under-card-area{
@@ -32,6 +35,23 @@
     background-color: bisque;
     color: red;
     border-radius: 15px;
+}
+
+.button:hover{
+    background-color: red;
+    color: bisque;
+    transition: 0.5s;
+}
+
+.card-choice-button{
+    background-color: #5B84B1FF;
+    color: bisque;
+}
+
+.card-choice-button:hover{
+    background-color: #5F4B8BFF;
+    color: bisque;
+    transition: 0.5s;
 }
 
 .move-right{

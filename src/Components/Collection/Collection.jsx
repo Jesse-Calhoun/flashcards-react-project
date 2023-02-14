@@ -6,7 +6,7 @@ const Collection = ({collection, getCardsInCollection}) => {
     }
     return ( 
         <section id='collection-button' className="align-left" >
-            <button onClick={handleClick}>{collection.title}</button>
+            <button onClick={handleClick} className='collection-button'>{collection.title}</button>
         </section>
      );
 }

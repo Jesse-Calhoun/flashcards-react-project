@@ -50,7 +50,7 @@ const CardViewer = ({cards, getCardsInCollection, collectionId, setCards}) => {
 
     return (
         <section id="card-viewer">
-            <div className='col-xs-9 padding center-align border-only original-background-color' >
+            <div className='col-xs-8 padding center-align border-only original-background-color' >
                 <div className='card-viewer'>
                     <div className='move-right'>
                         <button onClick={handleDelete} className='button'>Delete</button>
@@ -61,11 +61,11 @@ const CardViewer = ({cards, getCardsInCollection, collectionId, setCards}) => {
                 </div>
                 <div className='under-card-area'>
                         <div className='col-sm-4'>
-                            <button onClick={handlePrevious}>Previous</button>
+                            <button onClick={handlePrevious} className='card-choice-button'>Previous</button>
                         </div>
                         <div className='col-sm-4'>Flashcard {index+1} of {cards.length}</div>
                         <div className='col-sm-4'>
-                            <button onClick={handleNext}>Next</button>
+                            <button onClick={handleNext} className='card-choice-button'>Next</button>
                         </div>
                 </div>
             </div>
