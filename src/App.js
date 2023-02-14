@@ -4,6 +4,7 @@ import Header from './Components/Header/Header';
 import SideBar from './Components/Sidebar/Sidebar';
 import CardContainer from './Components/CardContainer/CardContainer';
 // import Main from './Components/Main/Main';
+import './App.css'
 
 
 
@@ -36,13 +37,13 @@ function App() {
   
 
   return (
-    <div>
+    <div className='body'>
       <Header/>
       {/* <Main collections={collections}/> */}
-      <div className='col-xs-3'>
+      <div className='col-xs-2' id='sidebar'>
         <SideBar collections={collections} getCardsInCollection={getCardsInCollection}/>
       </div>
-      <div className='col-xs-9'>
+      <div className='col-xs-10' id='card-container' >
         <CardContainer cards={cards}  getCardsInCollection={getCardsInCollection}  collectionId={collectionId} setCards={setCards}/>
       </div>
     </div>

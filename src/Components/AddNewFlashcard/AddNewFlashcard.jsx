@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-
+import './AddNewFlashcard.css'
 
 const AddNewFlashcard = ({getCardsInCollection, collectionId}) => {
     const [word, setWord] = useState('')
@@ -27,15 +27,19 @@ const AddNewFlashcard = ({getCardsInCollection, collectionId}) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='col-xs-3 add-new-card-box' >
             <h5>Add New Flashcard</h5>
-            <div id='new-word-input'>
-                <label><h6>Word</h6></label>
-                <input type="text" placeholder='New Word'  onChange={(event) => setWord(event.target.value)} value={word} />
+            <div>
+                <label>Word</label>
+                <div id='new-word-input'>
+                    <input type="text" placeholder='New Word'  onChange={(event) => setWord(event.target.value)} value={word} />
+                </div>
             </div>
-            <div id='new-def-input' >
-                <label> <h6>Definition</h6></label>
-                <input type="text" placeholder='New Definition' onChange={(event) => setDefinition(event.target.value)} value={definition} />
+            <div>
+                <label>Definition</label>
+                <div id='new-def-input' >
+                    <input type="text" placeholder='New Definition' onChange={(event) => setDefinition(event.target.value)} value={definition} />
+                </div>
             </div>
             <button type='submit'>Submit</button>
         </form>

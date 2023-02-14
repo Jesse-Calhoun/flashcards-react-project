@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AddNewFlashcard from '../AddNewFlashcard/AddNewFlashcard';
 import Card from '../Card/Card';
 import axios from 'axios';
+import './CardViewer.css'
 
 const CardViewer = ({cards, getCardsInCollection, collectionId, setCards}) => {
     const [index, setIndex] = useState(0)
@@ -49,19 +50,25 @@ const CardViewer = ({cards, getCardsInCollection, collectionId, setCards}) => {
 
     return (
         <section id="card-viewer">
-            <div >
-                <AddNewFlashcard getCardsInCollection={getCardsInCollection} collectionId={collectionId} />
-            </div>
-            <div>
-                <Card card={cards[index]}/>
-                <div>
-                    <button onClick={handleDelete}>Delete</button>
+            <div className='col-xs-9 padding center-align border-only original-background-color' >
+                <div className='card-viewer'>
+                    <div >
+                        <Card card={cards[index]} />
+                    </div>
+                    <div >
+                        <button onClick={handleDelete}>Delete</button>
+                    </div>
+                </div>
+                <div className='under-card-area'>
+                    <div>Flashcard {index+1} of {cards.length}</div>
+                    <div >
+                        <button onClick={handlePrevious}>Previous</button>
+                        <button onClick={handleNext}>Next</button>
+                    </div>
                 </div>
             </div>
-            <div>
-            <div>{index+1}/{cards.length}</div>
-                <button onClick={handlePrevious}>Previous</button>
-                <button onClick={handleNext}>Next</button>
+            <div className='align-items-end '>
+                <AddNewFlashcard getCardsInCollection={getCardsInCollection} collectionId={collectionId} />
             </div>
         </section>
     )}

@@ -1,0 +1,32 @@
+.original-background-color{
+    background-color: bisque;
+}
+.card-viewer{
+    background-color: palevioletred;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.padding{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-align{
+    text-align: center;
+}
+
+.space-around{
+    align-content: space-around;
+}
+
+.border-only{
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 0px;
+}
+
+.under-card-area{
+    background-color: bisque;
+    border-top: 1px solid black;
+}

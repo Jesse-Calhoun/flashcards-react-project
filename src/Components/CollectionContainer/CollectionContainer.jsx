@@ -1,4 +1,5 @@
 import Collection from "../Collection/Collection";
+import './CollectionContainer.css'
 
 
 const CollectionContainer = ({collections, getCardsInCollection }) => {
@@ -7,7 +8,7 @@ const CollectionContainer = ({collections, getCardsInCollection }) => {
     
     return ( 
         <section id='collection-container' >
-            <em><div>Collections</div></em>
+            <em><h2 className="align-center">Collections</h2></em>
             <ul id='collection-options'>
                 {collectionOptions}
             </ul>
