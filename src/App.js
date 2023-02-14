@@ -3,7 +3,6 @@ import axios from 'axios';
 import Header from './Components/Header/Header';
 import SideBar from './Components/Sidebar/Sidebar';
 import CardContainer from './Components/CardContainer/CardContainer';
-// import Main from './Components/Main/Main';
 import './App.css'
 
 
@@ -39,7 +38,6 @@ function App() {
   return (
     <div className='body'>
       <Header/>
-      {/* <Main collections={collections}/> */}
       <div className='col-xs-2' id='sidebar'>
         <SideBar collections={collections} getCardsInCollection={getCardsInCollection}/>
       </div>
